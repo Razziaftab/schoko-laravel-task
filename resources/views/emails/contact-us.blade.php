@@ -1,6 +1,6 @@
 @include('emails.header')
 
-@if($data['schokolade']) <p><b>Lieblingsschokolade:</b> {{ $data['name'] }}</p> @endif
+@if($data['schokolade']) <p><b>Lieblingsschokolade:</b> {{ $data['schokolade'] }}</p> @endif
 @if(!empty($data['interest'])) <p><b>Interesse:</b> {{ implode(', ', $data['interest']) }}</p> @endif
 @if($data['company']) <p><b>Firma:</b> {{ $data['company'] }}</p> @endif
 @if($data['first_name']) <p><b>Vorname:</b> {{ $data['first_name'] }}</p> @endif
