@@ -16,8 +16,7 @@ use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class ContactController extends Controller
 {
-//    const EMAIL_TO = 'admin@schokoladenseite.net';
-    const EMAIL_TO = 'razziaftab@gmail.com';
+    const EMAIL_TO = 'admin@schokoladenseite.net';
 
     /**
      * @return Application|Factory|View|\Illuminate\Foundation\Application
@@ -42,7 +41,7 @@ class ContactController extends Controller
             'email'         => $input['email'],
             'phone'         => $input['phone'],
             'schokolade'    => $input['schokolade'],
-            'interest'      => serialize($input['interest']),
+            'interest'      => isset($input['interest']) ? serialize($input['interest']) : null,
             'message'       => $input['message'],
         ];
 

@@ -31,7 +31,7 @@ class ExportContact implements FromCollection, WithHeadings, WithMapping
             $contact->email,
             $contact->phone,
             $contact->schokolade,
-            implode(', ', unserialize($contact->interest)),
+            !is_null($contact->interest) ? implode(', ', unserialize($contact->interest)) : null,
             implode(', ', $contact->files->pluck('name')->toArray()),
             $contact->message
         ];
